@@ -1,81 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <!-- coba di kampus -->
+@section('title')
+  Store Detail Page
+@endsection
 
-  <title>Store - Your Best Marketplace</title>
-
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link href="style/main.css" rel="stylesheet" />
-  <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light navbar-store fixed-top navbar-fixed-top" data-aos="fade-down">
-    <div class="container">
-      <a href="index.html" class="navbar-brand">
-        <img src="images/logo.svg" alt="Logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="categories.html" class="nav-link">Categories</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Reward</a>
-          </li>
-        </ul>
-
-        <!-- Desktop Menu -->
-        <ul class="navbar-nav d-none d-lg-flex">
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link" id="navbardropdown" role="button" data-toggle="dropdown">
-              <img src="images/icon-user.png" alt="" class="rounded-circle mr-2 profile-picture" />
-              Hi, Reno
-            </a>
-            <div class="dropdown-menu">
-              <a href="dashboard.html" class="dropdown-item">Dashboard</a>
-              <a href="dashboard-account.html" class="dropdown-item">Setting</a>
-              <div class="dropdown-divider"></div>
-              <a href="/" class="dropdown-item">Logout</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link d-inline-block mt-3"></a>
-            <img src="images/icon-cart-empty.svg" alt="" />
-          </li>
-        </ul>
-
-        <ul class="navbar-nav d-block d-lg-none">
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Hi, Reno
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link d-inline-block">
-              Cart
-            </a>
-          </li>
-        </ul>
-
-      </div>
-    </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="page-content page-details">
+@section('content')
+<div class="page-content page-details">
     <section class="store-breadcrumbs" data-aos="fade-down" data-aos-delay="100">
       <div class="container">
         <div class="row">
@@ -163,7 +93,7 @@
             <div class="col-12 col-lg-8">
               <ul class="list-unstyled">
                 <li class="media">
-                  <img src="images/icons-testimonial-1.png" alt="" class="mr-3 rounded-circle">
+                  <img src="/images/icons-testimonial-1.png" alt="" class="mr-3 rounded-circle">
                   <div class="media-body">
                     <h5 class="mt-2 mb-1">Hazza Risky</h5>
                     I thought it was not good for living room. I really happy
@@ -171,7 +101,7 @@
                   </div>
                 </li>
                 <li class="media">
-                  <img src="images/icons-testimonial-2.png" alt="" class="mr-3 rounded-circle">
+                  <img src="/images/icons-testimonial-2.png" alt="" class="mr-3 rounded-circle">
                   <div class="media-body">
                     <h5 class="mt-2 mb-1">Anna Sukkirata</h5>
                     Color is great with the minimalist concept. Even I thought it was
@@ -179,7 +109,7 @@
                   </div>
                 </li>
                 <li class="media">
-                  <img src="images/icons-testimonial-3.png" alt="" class="mr-3 rounded-circle">
+                  <img src="/images/icons-testimonial-3.png" alt="" class="mr-3 rounded-circle">
                   <div class="media-body">
                     <h5 class="mt-2 mb-1">Dakimu Wangi</h5>
                     When I saw at first, it was really awesome to have with.
@@ -192,29 +122,12 @@
         </div>
       </section>
     </div>
-  </div>
+</div>
+@endsection
 
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <div class="pt-4 pb-2">
-            2025 Copyright Store. All Rights Reserved.
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.slim.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="vendor/vue/vue.js"></script>
-  <script>
+@push('addon-script')
+<script src="/vendor/vue/vue.js"></script>
+<script>
     var gallery = new Vue({
       el: "#gallery",
       mounted() {
@@ -225,19 +138,19 @@
         photos: [
           {
             id: 1,
-            url: "images/product-details-1.jpg",
+            url: "/images/product-details-1.jpg",
           },
           {
             id: 2,
-            url: "images/product-details-2.jpg",
+            url: "/images/product-details-2.jpg",
           },
           {
             id: 3,
-            url: "images/product-details-3.jpg",
+            url: "/images/product-details-3.jpg",
           },
           {
             id: 4,
-            url: "images/product-details-4.jpg",
+            url: "/images/product-details-4.jpg",
           },
         ],
       },
@@ -247,8 +160,5 @@
         }
       }
     });
-  </script>
-  <script src="script/navbar-scroll.js"></script>
-</body>
-
-</html>
+</script>
+@endpush

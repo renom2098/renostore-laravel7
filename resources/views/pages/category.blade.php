@@ -1,88 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <!-- coba di dikampus -->
+@section('title')
+  Store Category Page
+@endsection
 
-  <title>Reno Store - Your Best Marketplace</title>
-
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link href="style/main.css" rel="stylesheet" />
-  <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light navbar-store fixed-top navbar-fixed-top" data-aos="fade-down">
-    <div class="container">
-      <a href="index.html" class="navbar-brand">
-        <img src="images/logo.svg" alt="Logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a href="index.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="categories.html" class="nav-link">Categories</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Reward</a>
-          </li>
-          <li class="nav-item">
-            <a href="register.html" class="nav-link">Sign Up</a>
-          </li>
-          <li class="nav-item">
-            <a href="login.html" class="btn btn-success nav-link px-4 text-white">Sign In</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="page-content page-home">
-    <section class="store-carousel">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12" data-aos="zoom-in">
-            <div id="storeCarousel" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li class="active" data-target="#storeCarousel" data-slide-to="0">
-                </li>
-                <li data-target="#storeCarousel" data-slide-to="1">
-                </li>
-                <li data-target="#storeCarousel" data-slide-to="2">
-                </li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="images/banner.jpg" alt="Careousel Image" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                  <img src="images/banner.jpg" alt="Careousel Image" class="d-block w-100">
-                </div>
-                <div class="carousel-item">
-                  <img src="images/banner.jpg" alt="Careousel Image" class="d-block w-100">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+@section('content')
+{{-- Page Content --}}
+<div class="page-content page-home">
     <section class="store-trend-categories mt-4">
       <div class="container">
         <div class="row">
           <div class="col-12" data-aos="fade-up">
-            <h5>Trend Categories</h5>
+            <h5>ALl Categories</h5>
           </div>
         </div>
         <div class="row">
@@ -137,11 +66,12 @@
         </div>
       </div>
     </section>
+
     <section class="store-new-products">
       <div class="container">
         <div class="row">
           <div class="col-12" data-aos="fade-up">
-            <h5>New Product</h5>
+            <h5>All Product</h5>
           </div>
         </div>
         <div class="row">
@@ -260,28 +190,6 @@
         </div>
       </div>
     </section>
-  </div>
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <div class="pt-4 pb-2">
-            2023 Copyright Store. All Rights Reserved.
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.slim.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="script/navbar-scroll.js"></script>
-</body>
-
-</html>
+</div>
+  
+@endsection
