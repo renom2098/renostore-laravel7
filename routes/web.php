@@ -20,6 +20,8 @@ Route::get('/cart/success', 'CartController@success')->name('success');
 
 Route::get('/register/success', 'Auth\RegisterController@success')->name('register-success');
 
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
 Auth::routes();
 
 
