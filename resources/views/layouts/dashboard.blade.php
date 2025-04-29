@@ -12,7 +12,7 @@
 
   @stack('prepend-style')
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link href="style/main.css" rel="stylesheet" />
+  <link href="/style/main.css" rel="stylesheet" />
   @stack('addon-style')
   <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
@@ -24,10 +24,10 @@
       <!-- sidebar -->
       <div class="border-right" id="sidebar-wrapper">
         <div class="sidebar-heading text-center">
-          <img src="images/dashboard-store-logo.svg" alt="" class="my-4">
+          <img src="/images/dashboard-store-logo.svg" alt="" class="my-4">
         </div>
         <div class="list-group list-group-flush">
-          <a href="dashboard.html" class="list-group-item list-group-item-action active">Dashboard</a>
+          <a href="dashboard.html" class="list-group-item list-group-item-action">Dashboard</a>
           <a href="dashboard-products.html" class="list-group-item list-group-item-action">My Products</a>
           <a href="dashboard-transactions.html" class="list-group-item list-group-item-action">Transactions</a>
           <a href="dashboard-settings.html" class="list-group-item list-group-item-action">Store Settings</a>
@@ -51,7 +51,7 @@
               <ul class="navbar-nav d-none d-lg-flex ml-auto">
                 <li class="nav-item dropdown">
                   <a href="#" class="nav-link" id="navbardropdown" role="button" data-toggle="dropdown">
-                    <img src="images/icon-user.png" alt="" class="rounded-circle mr-2 profile-picture" />
+                    <img src="/images/icon-user.png" alt="" class="rounded-circle mr-2 profile-picture" />
                     Hi, Reno
                   </a>
                   <div class="dropdown-menu">
@@ -63,7 +63,7 @@
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link d-inline-block mt-3"></a>
-                  <img src="images/icon-cart-filled.svg" alt="" />
+                  <img src="/images/icon-cart-filled.svg" alt="" />
                   <div class="card-badge">3</div>
                 </li>
               </ul>
@@ -94,8 +94,8 @@
 
   <!-- Bootstrap core JavaScript -->
   @stack('prepend-script')
-  <script src="vendor/jquery/jquery.slim.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/jquery/jquery.slim.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
