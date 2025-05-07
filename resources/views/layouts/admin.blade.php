@@ -13,6 +13,7 @@
   @stack('prepend-style')
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link href="/style/main.css" rel="stylesheet" />
+  <link href="/vendor/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
   @stack('addon-style')
   <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
@@ -27,7 +28,7 @@
           <img src="/images/admin.png" alt="" class="my-4" style="max-width: 150px">
         </div>
         <div class="list-group list-group-flush">
-          <a href="#" class="list-group-item list-group-item-action">Dashboard</a>
+          <a href="{{route('admin-dashboard')}}" class="list-group-item list-group-item-action">Dashboard</a>
           <a href="#" class="list-group-item list-group-item-action">Products</a>
           <a href="#" class="list-group-item list-group-item-action">Categories</a>
           <a href="#" class="list-group-item list-group-item-action">Transaction</a>
@@ -86,8 +87,9 @@
 
   <!-- Bootstrap core JavaScript -->
   @stack('prepend-script')
-  <script src="/vendor/jquery/jquery.slim.min.js"></script>
+  <script src="/vendor/jquery/jquery.min.js"></script>
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/datatables/datatables.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
