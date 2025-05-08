@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
+use App\Category; // load model
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-
 
 use Illuminate\Support\Facades\Storage;
 
@@ -52,7 +51,7 @@ class CategoryController extends Controller
                     return $item->photo ? '<img src="'. Storage::url($item->photo) .'" style="max-height: 40px;" />' : '';
                 })
                 ->rawColumns(['action', 'photo'])
-                ->make(true);
+                ->make();
         }
         return view('pages.admin.category.index');
     }
