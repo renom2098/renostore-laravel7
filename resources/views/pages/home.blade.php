@@ -59,7 +59,6 @@
               No Categories Found
             </div>
           @endforelse
-
         </div>
       </div>
     </section>
