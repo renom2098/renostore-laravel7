@@ -23,7 +23,7 @@
 
                 <div class="form-group">
                     <label for="#">Email Address</label>
-                    <input id="email" v-model="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                    <input id="email" v-model="email" @change="checkForEmailAvailability()" type="email" class="form-control @error('email') is-invalid @enderror" :class="{ 'is-invalid' : this.email_unavailable }" name="email" value="{{ old('email') }}" required autocomplete="email">
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -81,14 +81,14 @@
                 <div class="form-group" v-if="is_store_open">
                 <label for="#">Kategori</label>
                 <select name="categories_id" class="form-control" id="">
-                <option value="#" disabled>Select Category</option>
+                <option value="#" disabled selected>Select Category</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
                 </select>
                 </div>
 
-                <button type="submit" class="btn btn-success btn-block mt-4">Sign Up Now</button>
+                <button type="submit" class="btn btn-success btn-block mt-4" :disabled="this.email_unavailable">Sign Up Now</button>
                 <a href="{{ route('login') }}" class="btn btn-signup btn-block mt-2">Back to Sign In</a>
             </form>
             </div>
@@ -103,28 +103,59 @@
 @push('addon-script')
 <script src="vendor/vue/vue.js"></script>
 <script src="https://unpkg.com/vue-toasted"></script>
+<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
 <script>
 Vue.use(Toasted)
 var register = new Vue({
     el: '#register',
     mounted() {
     AOS.init();
-    // this.$toasted.error(
-    //     "Maaf, tampaknya email sudah terdaftar pada sistem kami.",
-    //     {
-    //     position: "top-center",
-    //     className: "rounded",
-    //     duration: 1000
-    //     }
-    // );
     },
-    data: {
-    name: "Reno Mujiarto",
-    email: "renom2098@gmail.com",
-    password: "",
-    is_store_open: true,
-    store_name: "",
-    }
+    methods: {
+        checkForEmailAvailability: function() {
+            var self = this;
+            axios.get('{{ route('api-register-check') }}', {
+                params: {
+                    email: this.email
+                }
+            })
+            .then(function (response) {
+                // alert("masuk response");
+                if(response.data == 'Available') {
+                    self.$toasted.show(
+                        "Email anda tersedia!, Silahkan lanjut langkah selanjutnya!",
+                        {
+                        position: "top-center",
+                        className: "rounded",
+                        duration: 1000,
+                        }
+                    );
+                    self.email_unavailable = false;
+                } else {
+                    self.$toasted.error(
+                        "Maaf, tampaknya email sudah terdaftar pada sistem kami.",
+                        {
+                        position: "top-center",
+                        className: "rounded",
+                        duration: 1000,
+                        }
+                    );
+                    self.email_unavailable = true;
+                }
+                // handle success
+                console.log(response);
+            });
+        }
+    },
+    data() {
+        return {
+        name: "Reno Mujiarto",
+        email: "renom2098@gmail.com",
+        is_store_open: true,
+        store_name: "",
+        email_unavailable: false
+        }
+    },
 });
 </script>
 @endpush
